@@ -312,7 +312,27 @@ foreach (var m in Selected.Measures) { FormatDax(m); }
 ```
 
 </textarea></section>
+<section data-markdown  ><textarea data-template>
+
+### 2.6 Generar Documentación
+
+-----
+
+```csharp
+// Construct a list of all visible columns and measures:
+var savepath = @"C:\daily\daily\2022\02\05\te-samples\2.6-generar documentacion";
+var objects = Model.AllMeasures.Where(m => !m.IsHidden && !m.Table.IsHidden).Cast<ITabularNamedObject>()
+      .Concat(Model.AllColumns.Where(c => !c.IsHidden && !c.Table.IsHidden));
+
+// Get their properties in TSV format (tabulator-separated):
+var tsv = ExportProperties(objects,"Name,ObjectType,Parent,Description,FormatString,DataType,Expression");
+
+SaveFile(savepath, tsv);
+```
+
+</textarea></section>
 <section data-markdown  data-background-video="media/background-video.mp4", data-background-video-loop data-background-video-muted data-background-opacity="0.2"><textarea data-template>
+
 
 ## 3 💥 Generador de medidas 💥
 
@@ -358,8 +378,7 @@ var mainMeasure = selectedTable.AddMeasure(measure_name, processedMeasure);
 - Cambiar el path
 
 </textarea></section>
-</section>
-<section data-markdown ><textarea data-template>
+<section data-markdown  ><textarea data-template>
 
 
 
@@ -493,7 +512,29 @@ if (!createMeasures)
 {
     sb_Script.Output(); // Outputs a C# script which can be executed in the Advanced Scripting window to create the measures
 }
-``
+```
+
+</textarea></section>
+</section>
+<section data-markdown  ><textarea data-template>
+
+## 6 💪 Usando TE para hacer backups del modelo 💪
+
+```csharp
+Start-Process -filePath "C:\Program Files (x86)\Tabular Editor\TabularEditor.exe" -Wait -NoNewWindow -PassThru -ArgumentList "$Server $Database -B ""$backupFilePathAndName""" | Out-Null
+```
+
+
+
+
+</textarea></section>
+<section data-markdown ><textarea data-template>
+
+## Pensemos...
+
++ Tooling generalizado
++ DevOps con TE2.
++ Buenas práctica
 </textarea></section>
 			</div>
 		</div>
