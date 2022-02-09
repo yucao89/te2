@@ -92,7 +92,7 @@ Enlaces importantes:
 
 ## 1 Búsqueda avanzada
 
-![catmoar](media/mourinho.jpg) <!-- .element: style="height:50vh; max-width:80vw; image-rendering: crisp-edges;" -->
+![searching](media/mourinho-looking.jpg) <!-- .element: style="height:50vh; max-width:80vw; image-rendering: crisp-edges;" -->
 
 
 </textarea></section>
@@ -152,7 +152,7 @@ ObjectType = "Measure" and !Name.EndsWith("Base") and !Name.StartsWith("_refacto
 </textarea></section>
 <section data-markdown  ><textarea data-template>
 
-[Michael Kovalsky - Elegant BI](kovalsky) 
+[Michael Kovalsky - Elegant BI](https://www.elegantbi.com/post/advancedfiltering) 
 ![catmoar](media/moar.jpg) <!-- .element: style="height:50vh; max-width:80vw; image-rendering: crisp-edges;" -->
 
 + LINQ
@@ -199,7 +199,7 @@ SaveFile(exportPath, tsv);
 </textarea></section>
 <section data-markdown  ><textarea data-template>
 
-### 2.2 Set MetaData
+### 2.2 Crear Metadatos
 
 ----------
 
@@ -228,7 +228,7 @@ foreach(var m in Selected.Measures) {
 
 ```csharp
 string tsv = "TableName\tType\tPartitions\tNumberColumns\tNumberMeasures\tRelatedTables\tNumberMeasuresRefactored"; // TSV file header row
-string savepath = @"C:\work\basket\Refactor\te_output\";
+string savepath = @"C:\daily\daily\2022\02\05\te-samples\2.3 refactoring\";
 
 var allTable = Model.Tables;
 
@@ -373,7 +373,6 @@ var mainMeasure = selectedTable.AddMeasure(measure_name, processedMeasure);
 ## 4 💪 ALM Toolkit 💪
 
 </textarea></section>
-<section>
 <section data-markdown  ><textarea data-template>
 
 ## 5 👷 Tengo un report en Live y quiero extraer las medidas 👷
@@ -532,17 +531,22 @@ Start-Process -filePath "C:\Program Files (x86)\Tabular Editor\TabularEditor.exe
 ```
 
 
-
-
 </textarea></section>
-</section>
-<section data-markdown ><textarea data-template>
+<section data-markdown  ><textarea data-template>
 
 ## Pensemos...
 
 + Tooling generalizado
 + DevOps con TE2.
-+ Buenas práctica
++ Buenas prácticas
+
+</textarea></section>
+<section data-markdown ><textarea data-template>
+
+# GRACIAS 
+
+> Preguntas... Si me sé la respuesta os la contesto y si no lo sé, me lo invento.
+
 </textarea></section>
 			</div>
 		</div>
